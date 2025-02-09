@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sun Feb  9 01:51:30 2025
+# Process ID: 3830954
+# Current directory: /home/noajam/Documents/comp541/Lab5/Lab5.runs/impl_1
+# Command line: vivado -log SoundAccel.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source SoundAccel.tcl -notrace
+# Log file: /home/noajam/Documents/comp541/Lab5/Lab5.runs/impl_1/SoundAccel.vdi
+# Journal file: /home/noajam/Documents/comp541/Lab5/Lab5.runs/impl_1/vivado.jou
+#-----------------------------------------------------------
+source SoundAccel.tcl -notrace

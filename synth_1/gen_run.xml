@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1739083494">
+  <File Type="VDS-TIMING-PB" Name="SoundAccel_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="SoundAccel_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="SoundAccel.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="SoundAccel_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="SoundAccel_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="SoundAccel_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="SoundAccel.vds"/>
+  <File Type="REPORTS-TCL" Name="SoundAccel_reports.tcl"/>
+  <File Type="PA-TCL" Name="SoundAccel.tcl"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/accel_src/accelerometer.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/starter/accel_src/accelerometer.sv"/>
+        <Attr Name="ImportTime" Val="1739068010"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/display8bit.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/hexto7seg.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Lab3b/Lab3b.srcs/sources_1/new/hexto7seg.sv"/>
+        <Attr Name="ImportTime" Val="1738302090"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/starter/sound.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/starter/sound.sv"/>
+        <Attr Name="ImportTime" Val="1739068010"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/accel_src/ADXL362Ctrl.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/starter/accel_src/ADXL362Ctrl.vhd"/>
+        <Attr Name="ImportTime" Val="1739068010"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/accel_src/AccelArithmetics.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/starter/accel_src/AccelArithmetics.vhd"/>
+        <Attr Name="ImportTime" Val="1739068010"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/accel_src/AccelerometerCtl.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/starter/accel_src/AccelerometerCtl.vhd"/>
+        <Attr Name="ImportTime" Val="1739068010"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/accel_src/SPI_If.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/starter/accel_src/SPI_If.vhd"/>
+        <Attr Name="ImportTime" Val="1739068010"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/accel_src/accel_sound_demo.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/starter/accel_src/accel_sound_demo.sv"/>
+        <Attr Name="ImportTime" Val="1739068010"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/starter/sound_demo.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/starter/sound_demo.sv"/>
+        <Attr Name="ImportTime" Val="1739068010"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/counter.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/counter8digit.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/starter/display4digit.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/starter/display4digit.sv"/>
+        <Attr Name="ImportTime" Val="1739068010"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/counter4digit.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/counter8.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="SoundAccel"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/starter/clock.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Lab3b/starter/clock.xdc"/>
+        <Attr Name="ImportTime" Val="1738297730"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/constrs_1/imports/starter/segdisplay.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Lab3b/starter/segdisplay.xdc"/>
+        <Attr Name="ImportTime" Val="1738297730"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/constrs_1/imports/starter/switches.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Lab3b/starter/switches.xdc"/>
+        <Attr Name="ImportTime" Val="1738297730"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/constrs_1/imports/starter/sound.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/starter/sound.xdc"/>
+        <Attr Name="ImportTime" Val="1739068010"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/constrs_1/imports/starter/accel.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/starter/accel.xdc"/>
+        <Attr Name="ImportTime" Val="1739068010"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/starter/accel.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>

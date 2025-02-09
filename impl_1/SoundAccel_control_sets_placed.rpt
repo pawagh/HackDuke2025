@@ -1,0 +1,99 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+| Date         : Sun Feb  9 01:49:56 2025
+| Host         : comp541-1sp25-noajam.cs.unc.edu running 64-bit Ubuntu 22.04.5 LTS
+| Command      : report_control_sets -verbose -file SoundAccel_control_sets_placed.rpt
+| Design       : SoundAccel
+| Device       : xc7a100t
+---------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    21 |
+|    Minimum number of control sets                        |    21 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    60 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    21 |
+| >= 0 to < 4        |     0 |
+| >= 4 to < 6        |     4 |
+| >= 6 to < 8        |     4 |
+| >= 8 to < 10       |     5 |
+| >= 10 to < 12      |     1 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     7 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              50 |           18 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              92 |           26 |
+| Yes          | No                    | No                     |              58 |           14 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             108 |           29 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------+------------------------------------------------------------------------------+-----------------------------------------------------+------------------+----------------+--------------+
+|  Clock Signal  |                                 Enable Signal                                |                   Set/Reset Signal                  | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------+------------------------------------------------------------------------------+-----------------------------------------------------+------------------+----------------+--------------+
+|  clk_IBUF_BUFG | accel/accel/ADXL_Control/FSM_sequential_StC_Adxl_Ctrl[3]_i_1_n_0             | accel/accel/RESET_INT_reg_n_0                       |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | accel/accel/ADXL_Control/Cnt_Num_Reads[3]_i_2_n_0                            | accel/accel/ADXL_Control/Reset_Cnt_Num_Reads        |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | accel/accel/ADXL_Control/Cmd_Reg[0]_1                                        | accel/accel/ADXL_Control/Cmd_Reg[0][6]_i_1_n_0      |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | accel/accel/ADXL_Control/Cmd_Reg[1][6]_i_2_n_0                               | accel/accel/ADXL_Control/Cmd_Reg[1]0_in[7]          |                1 |              5 |         5.00 |
+|  clk_IBUF_BUFG |                                                                              | accel/accel/ADXL_Control/SPI_Interface/SCLK_2X_DIV0 |                2 |              6 |         3.00 |
+|  clk_IBUF_BUFG |                                                                              | accel/accel/RESET_INT_reg_n_0                       |                3 |              6 |         2.00 |
+|  clk_IBUF_BUFG | accel/accel/ADXL_Control/Cmd_Reg[2]_0                                        | accel/accel/ADXL_Control/Cmd_Reg[2][7]              |                2 |              6 |         3.00 |
+|  clk_IBUF_BUFG | accel/accel/ADXL_Control/D_Send[6]_i_1_n_0                                   | accel/accel/RESET_INT_reg_n_0                       |                2 |              7 |         3.50 |
+|  clk_IBUF_BUFG | accel/accel/ADXL_Control/SPI_Interface/EN_LOAD_DOUT                          |                                                     |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG | accel/accel/ADXL_Control/SPI_Interface/MOSI_REG[7]_i_1_n_0                   |                                                     |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG | accel/accel/ADXL_Control/SPI_Interface/SHIFT_TICK_IN                         |                                                     |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG |                                                                              | accel/accel/Accel_Calculation/ACCEL_X_CLIP[3]       |                3 |              9 |         3.00 |
+|  clk_IBUF_BUFG |                                                                              | accel/accel/Accel_Calculation/ACCEL_Y_CLIP[8]       |                3 |              9 |         3.00 |
+|  clk_IBUF_BUFG |                                                                              | accel/accel/ADXL_Control/Cnt_SS_Inactive0           |                3 |             10 |         3.33 |
+|  clk_IBUF_BUFG |                                                                              | accel/accel/ADXL_Control/Reset_Sample_Rate_Div      |                4 |             20 |         5.00 |
+|  clk_IBUF_BUFG | accel/accel/ADXL_Control/E[0]                                                | accel/accel/RESET_INT_reg_n_0                       |                5 |             22 |         4.40 |
+|  clk_IBUF_BUFG | accel/accel/ADXL_Control/StC_Adxl_Ctrl[3]                                    | accel/accel/RESET_INT_reg_n_0                       |                8 |             24 |         3.00 |
+|  clk_IBUF_BUFG |                                                                              | sound/clear                                         |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | accel/accel/ADXL_Control/Cnt_Num_Reads[3]_i_2_n_0                            | accel/accel/ADXL_Control/ACCEL_X_SUM0               |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | accel/accel/ADXL_Control/SPI_Interface/FSM_sequential_StC_Spi_SendRec_reg[1] |                                                     |                9 |             42 |         4.67 |
+|  clk_IBUF_BUFG |                                                                              |                                                     |               18 |             50 |         2.78 |
++----------------+------------------------------------------------------------------------------+-----------------------------------------------------+------------------+----------------+--------------+
+
+

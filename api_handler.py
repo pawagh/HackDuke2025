@@ -34,29 +34,29 @@ def get_ai_response(messages, temperature=0.7, max_tokens=512):
     # Initialize client
     client = InferenceClient(
         token=api_token,
-        timeout=30
+        timeout=30  # Increase timeout for longer responses
     )
     
     try:
         # Format the conversation
         prompt = format_prompt(messages)
         
-        # Make the API call with streaming
-        response_stream = client.text_generation(
-            model="mistralai/Mistral-7B-Instruct-v0.2",
+        # Make the API call
+        response = client.text_generation(
+            model="mistralai/Mistral-7B-Instruct-v0.2",  # You can change the model
             prompt=prompt,
-            max_new_tokens=max_tokens,
-            temperature=temperature,
-            top_p=0.95,
-            repetition_penalty=1.1,
-            do_sample=True,
-            seed=42,
-            stream=True  # Enable streaming
+            max_new_tokens=max_tokens,        # Maximum length of response
+            temperature=temperature,           # Controls randomness (0.0-1.0)
+            top_p=0.95,               # Nucleus sampling
+            repetition_penalty=1.1,    # Prevent repetitive text
+            do_sample=True,           # Enable sampling
+            seed=42                    # For reproducibility
         )
         
-        # Process the stream
-        for chunk in response_stream:
-            yield chunk  # Yield each chunk of the response
+        # Clean up response if needed
+        cleaned_response = response.strip()
+        
+        return cleaned_response
         
     except Exception as e:
         return f"Error: {str(e)}" 

@@ -129,6 +129,17 @@ def update_chat_context(address, tank_capacity, fill_time, supply_metrics=None):
         {"role": "system", "content": context}
     ]
 
+def simplify_geojson(gdf, tolerance=0.001):
+    """Simplify geometries and remove unnecessary columns"""
+    # Keep only essential columns
+    essential_columns = ['NAME', 'FTYPE', 'FCODE_DESC', 'geometry']
+    gdf = gdf[essential_columns].copy()
+    
+    # Simplify geometries
+    gdf['geometry'] = gdf['geometry'].simplify(tolerance=tolerance, preserve_topology=True)
+    
+    return gdf
+
 def main():
     # Set page config to wide mode
     st.set_page_config(layout="wide")
@@ -387,7 +398,10 @@ def main():
             ).add_to(m)
         
         # Read the GeoJSON file
-        gdf = gpd.read_file('/Users/sashankganapathiraju/Downloads/USA_Detailed_Water_Bodies.geojson')
+        gdf = gpd.read_file('USA_Detailed_Water_Bodies.geojson')
+        
+        # Simplify the data before processing
+        gdf = simplify_geojson(gdf)
         
         # Check if the data has valid geometry
         if not gdf.geometry.is_valid.all():

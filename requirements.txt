@@ -6,4 +6,5 @@ geocoder
 shapely
 openrouteservice
 folium
+streamlit_folium
  

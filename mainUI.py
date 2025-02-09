@@ -50,8 +50,7 @@ def get_route_details(client, start_coords, end_coords):
         return duration_minutes, distance_miles, route_coords
     
     except Exception as e:
-        st.toast(f"Route calculation error: {str(e)}", icon='⚠️')
-        time.sleep(3)
+        st.warning(f"Could not get route details: {str(e)}")
         return None, None, None
 
 def calculate_water_metrics(duration_minutes, distance_miles, tank_capacity, flow_rate, route_coords, centroid, row):
@@ -149,34 +148,15 @@ def main():
         footer {visibility: hidden;}
         
         /* Toast positioning and styling */
-        [data-testid="stToast"] {
-            position: fixed !important;
-            bottom: 2vh !important;
-            right: 2vw !important;
-            width: auto !important;
-            transform: none !important;
-            margin: 0 !important;
-            z-index: 9999999 !important;
-            min-width: 250px !important;
-            max-width: 300px !important;
-            pointer-events: auto !important;
-        }
-        
-        [data-testid="stToast"] > div:first-child {
-            position: relative !important;
-            transform: none !important;
-            margin: 0 !important;
-            display: flex !important;
-            flex-direction: column !important;
-            align-items: flex-end !important;
-        }
-        
-        [data-testid="stToast"] > div > div {
-            background-color: white !important;
-            border-radius: 8px !important;
-            padding: 16px !important;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
-            width: 100% !important;
+        .stToast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            background-color: white;
+            border-radius: 4px;
+            padding: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
         </style>
     """, unsafe_allow_html=True)
@@ -432,48 +412,27 @@ def main():
             supply_metrics = []
             for _, row in nearest_bodies.to_crs("EPSG:4326").iterrows():
                 centroid = row.geometry.centroid
-                try:
-                    duration_minutes, distance_miles, route_coords = get_route_details(
-                        ors_client, [g.lng, g.lat], [centroid.x, centroid.y]
-                    )
-                    
-                    if route_coords:
-                        # Calculate round trip time including fill time
-                        round_trip_minutes = (duration_minutes * 2) + fill_time
-                        
-                        # Calculate maximum sustainable flow rate
-                        max_flow_rate = tank_capacity / round_trip_minutes
-                        
-                        metrics = {
-                            'duration': duration_minutes,
-                            'distance': distance_miles,
-                            'round_trip': round_trip_minutes,
-                            'max_flow_rate': max_flow_rate,
-                            'route_coords': route_coords,
-                            'centroid': centroid,
-                            'row': row
-                        }
-                        supply_metrics.append(metrics)
-                    else:
-                        st.toast(
-                            f"Skipping water body '{row['NAME']}': Unable to calculate route",
-                            icon='ℹ️'
-                        )
-                        time.sleep(2)
-                except Exception as e:
-                    st.toast(
-                        f"Error processing water body '{row['NAME']}': {str(e)}",
-                        icon='⚠️'
-                    )
-                    time.sleep(2)
-                    continue
-            
-            if not supply_metrics:
-                st.toast(
-                    "No accessible water bodies found within range. Try a different location.",
-                    icon='⚠️'
+                duration_minutes, distance_miles, route_coords = get_route_details(
+                    ors_client, [g.lng, g.lat], [centroid.x, centroid.y]
                 )
-                time.sleep(3)
+                
+                if route_coords:
+                    # Calculate round trip time including fill time
+                    round_trip_minutes = (duration_minutes * 2) + fill_time
+                    
+                    # Calculate maximum sustainable flow rate
+                    max_flow_rate = tank_capacity / round_trip_minutes
+                    
+                    metrics = {
+                        'duration': duration_minutes,
+                        'distance': distance_miles,
+                        'round_trip': round_trip_minutes,
+                        'max_flow_rate': max_flow_rate,
+                        'route_coords': route_coords,
+                        'centroid': centroid,
+                        'row': row
+                    }
+                    supply_metrics.append(metrics)
             
             if supply_metrics:
                 # Find the highest sustainable flow rate

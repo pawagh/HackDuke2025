@@ -19,15 +19,18 @@ def main():
     # Set page config to wide mode
     st.set_page_config(layout="wide")
     
-    # Add custom CSS for additional width control
+    # Add custom CSS for additional width control and hide nav bar
     st.markdown("""
         <style>
         .block-container {
             padding-top: 1rem;
             padding-bottom: 0rem;
-            padding-left: 15rem;
-            padding-right: 15rem;
+            padding-left: 5rem;
+            padding-right: 5rem;
         }
+        #MainMenu {visibility: hidden;}
+        header {visibility: hidden;}
+        footer {visibility: hidden;}
         </style>
     """, unsafe_allow_html=True)
     

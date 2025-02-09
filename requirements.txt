@@ -1,0 +1,6 @@
+streamlit
+streamlit-stl
+huggingface-hub
+python-dotenv
+numpy
+plotly 

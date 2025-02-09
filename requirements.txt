@@ -5,3 +5,5 @@ python-dotenv
 numpy
 plotly 
 folium
+st_folium
+streamlit_folium

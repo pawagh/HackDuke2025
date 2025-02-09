@@ -1,0 +1,6 @@
+[server]
+runOnSave = true
+
+[browser]
+serverAddress = "localhost"
+serverPort = 8501

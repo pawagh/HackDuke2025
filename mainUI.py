@@ -1,5 +1,4 @@
 import streamlit as st
-import streamlit as st
 from streamlit_stl import stl_from_file
 import api_handler
 import os
